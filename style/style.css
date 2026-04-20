@@ -1,0 +1,524 @@
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Chenla&family=Dangrek&family=Hanuman:wght@100..900&family=Koulen&family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Siemreap&family=Teko:wght@300..700&display=swap");
+
+:root {
+  --bg-color: #fff;
+  --text-color: #00492d;
+  --card-color: #f5f5f5;
+}
+
+body {
+  padding: 30px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.5s;
+}
+
+body.dark {
+  --bg-color: #00492d;
+  --text-color: #fff;
+  transition: 0.5s;
+}
+
+.navbar {
+  border: 2px solid #00ff9d15;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 22px;
+}
+.navbar .container .leaf {
+  height: 34px;
+  border-radius: 50%;
+}
+.navbar .container .logo {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "Dangrek";
+  font-size: 30px;
+}
+
+.navbar .container .collapse .navbar-nav .nav-item .nav-link {
+  font-family: "Dangrek";
+  color: var(--text-color);
+  transition: 0.2s;
+}
+.navbar .container .collapse .navbar-nav .nav-item .active {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 5px;
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link:hover {
+  transform: scale(1.1);
+}
+.navbar .container .navbar-toggler {
+  border: none;
+}
+
+.navbar .container .btn-cart {
+  font-family: "Dangrek";
+  color: var(--text-color);
+  transition: 0.2s;
+}
+.navbar .container .btn-cart:hover {
+  transform: scale(1.1);
+}
+.navbar .container .toggle-btn {
+  border: 1px solid rgba(255, 255, 255, 0.141);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.navbar .container .navbar-toggler .fa-bars-staggered {
+  color: var(--text-color);
+}
+
+/*Hero Section*/
+.container-xxl {
+  margin-top: 20px;
+  height: 550px;
+}
+.container-xxl .row .col-md-6 .title {
+  font-family: "Dangrek";
+  font-size: 80px;
+}
+.container-xxl .row .col-md-6 .des {
+  font-family: "Dangrek";
+}
+.container-xxl .row .col-md-6 .check-btn {
+  background-color: #efde6d;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+.container-xxl .row .col-md-6 .check-btn:hover {
+  background-color: #9d9143;
+}
+.container-xxl .row .col-md-6 .check-btn a {
+  text-decoration: none;
+  font-family: "Dangrek";
+  color: var(--text-color);
+}
+
+.container-xxl .row .col-md-6 img {
+  height: 520px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/*About Us Section*/
+.container-md {
+  margin-top: 50px;
+}
+.container-md .row .col-md-6 img {
+  height: 340px;
+  width: 100%;
+  border-radius: 12px;
+}
+.container-md .row .col-md-6 .title {
+  font-family: "Dangrek";
+  font-size: 36px;
+}
+.container-md .row .col-md-6 .des {
+  font-family: "Dangrek";
+  margin-top: 14px;
+}
+
+/*Rooms and Villas*/
+.container-lg {
+  margin-top: 50px;
+}
+.container-lg h2 {
+  font-family: "Dangrek";
+  font-size: 36px;
+}
+.select {
+  width: 100%;
+  font-family: "Dangrek";
+  padding: 10px 55px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 73, 45, 0.3);
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.select:hover {
+  box-shadow: 0 6px 14px rgba(0, 73, 45, 0.5);
+}
+
+/* Focus (when clicked) */
+.select:focus {
+  border-color: #00492d;
+  box-shadow: 0 0 8px #00492d;
+}
+.rooms {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  font-family: "Dangrek";
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.price {
+  color: green;
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  padding: 10px;
+  background: #00492d;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+/*Services & Facilities*/
+.facilities {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.facilities h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-family: "Dangrek";
+}
+
+/* Grid */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Dangrek";
+}
+
+/* Card */
+.facility-card {
+  background: var(--text-color);
+  color: var(--bg-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+.facility-card i {
+  color: var(--bg-color);
+}
+.facility-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 73, 45, 0.2);
+}
+
+.facility-icon {
+  font-size: 40px;
+  color: #00492d;
+  margin-bottom: 15px;
+}
+.facility-card p {
+  font-size: 14px;
+  color: #939393;
+}
+
+/*Gallery*/
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Grid */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Grid items */
+.text-gallery {
+  grid-column: span 5;
+  text-align: center;
+  font-family: "Dangrek";
+  font-size: 36px;
+}
+.parent div {
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.parent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.parent img:hover {
+  transform: scale(1.1);
+}
+
+/* Your layout */
+.div1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.div2 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.div3 {
+  grid-row: span 3;
+}
+
+.div4 {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.div5 {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/*Booking Popup*/
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  font-family: "Dangrek";
+}
+
+/* Form box */
+.popup-content {
+  background: var(--text-color);
+  color: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  position: relative;
+}
+
+/* Inputs */
+.popup input,
+.popup select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.popup .popup-content .btn {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.popup .popup-content .btn-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* Slider banner promotion */
+.carousel {
+  margin-top: 50px;
+}
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Overlay */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Dangrek";
+}
+
+/* Discount text */
+.carousel-caption p {
+  font-size: 20px;
+}
+/* Button */
+.btn-book {
+  background: #00492d;
+  color: #fff;
+}
+.btn-book:hover {
+  background: #006b45;
+}
+
+/*Contact Section*/
+.container .contact-us {
+  font-family: "Dangrek";
+}
+.contact-box {
+  color: var(--text-color);
+  border-radius: 14px;
+  padding: 20px;
+  font-family: "Dangrek";
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Info */
+.contact-info i {
+  margin-right: 10px;
+}
+
+/* Map */
+.map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Button */
+.btn-main {
+  background: var(--text-color);
+  color:var(--bg-color)
+}
+.btn-main:hover {
+  background: #006b45;
+}
+
+/*Footer*/
+footer{
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-family: "Dangrek";
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+/*Media All Screen*/
+@media screen and (max-width: 1200px) {
+  /*Navbar*/
+  .logo {
+    display: none;
+  }
+  .container-xxl {
+    margin-top: 40px;
+  }
+  .container-xxl .row .col-md-6 img {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  /*Navbar*/
+  .logo {
+    display: none;
+  }
+  .container-xxl .row .col-md-6 img {
+    display: none;
+  }
+  .container-xxl .row .col-md-6 .title {
+    font-size: 50px;
+  }
+  .container-xxl .row .col-md-6 .des {
+    font-size: 12px;
+  }
+  /*Hero section*/
+  .container-xxl {
+    height: auto;
+  }
+  /*About section*/
+  .container-md {
+    margin-top: 20px;
+  }
+  .container-md .row .col-md-6 {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 469px) {
+  /*Navbar*/
+  .logo {
+    display: none;
+  }
+  .container-xxl .row .col-md-6 img {
+    display: none;
+  }
+  .container-xxl .row .col-md-6 .title {
+    font-size: 40px;
+  }
+  .container-xxl .row .col-md-6 .des {
+    font-size: 12px;
+  }
+  /*Hero section*/
+  .container-xxl {
+    height: 400px;
+  }
+  /*About section*/
+  .container-md .row .col-md-6 img {
+    height: 200px;
+  }
+}

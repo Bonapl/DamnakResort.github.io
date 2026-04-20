@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ដំណាក់ រ៉ីស៊ត| Cambodia</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Fontawsom-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!---Style CSS-->
+    <link rel="stylesheet" href="style/style.css">
+    <!---Icon-->
+    <link rel="icon" href="image/logo.png" type="image/x-icon">
+    <!---Aos Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!---Navbar-->
+    <nav id="navbar" class="navbar navbar-expand-lg" data-aos="fade-down" data-aos-duration="2000">
+        <div class="container">
+            <img class="leaf" src="image/leaf.gif" alt="leaf">
+            <a class="logo">ដំណាក់ រីស៊ត</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#navbar" class="nav-link">ទំព័រដើម</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">អំពីយើង</a></li>
+                    <li class="nav-item"><a href="#room" class="nav-link">បន្ទប់ និងវីឡា</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">រូបភាព</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">ទំនាក់ទំនង</a></li>
+                    <li class="nav-item"><a href="#room" class="nav-link active">Book Now</a></li>
+                </ul>
+            </div>
+            <button class="toggle-btn" onclick="toggleMode()"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <!---Hero Section-->
+    <div class="container-xxl">
+        <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="2000">
+                <h1 class="title">សូមស្វាគមន៏មកកាន់</h1>
+                <h1 class="title">ដំណាក់ រីស៊ត</h1>
+                <p class="des">👉 Website នេះអាចជួយឪ្យ
+                    លោកអ្នកមានភាពងាយស្រួលក្នុងការមកលំហែកាយនៅ ដំណាក់ រីស៊ត
+                    របស់យើងខ្ញុំ
+                </p>
+                <button class="check-btn"><a href="#room">Explore Rooms<i
+                            class="fa-solid fa-arrow-right"></i></a></button>
+            </div>
+            <div class="col-md-6" data-aos="fade-left" data-aos-duration="2000">
+                <img src="image/hero-bg.png" alt="hero-bg">
+            </div>
+        </div>
+    </div>
+
+    <!--About Us-->
+    <div id="about" class="container-md" data-aos="fade-up" data-aos-duration="2000">
+        <div class="row ">
+            <div class="col-md-6">
+                <img src="image/damnak.png" alt="damnak">
+            </div>
+            <div class="col-md-6">
+                <h1 class="title">អំពីយើង</h1>
+                <p class="des">ដំណាក់ រីស៊ត
+                    គឺជាកន្លែងសម្រាប់សម្រាកនៅលំហែកាយដែលមានទីតាំងស្ថិតនៅក្នុងបរិវេណធម្មជាតិដ៏ស្រស់ស្អាត។
+                    យើងខ្ញុំផ្តល់ជូននូវបន្ទប់សម្រាប់ស្នាក់នៅដែលមានការតុបតែងយ៉ាងប្រណិត
+                    និងមានសេវាកម្មល្អឥតខ្ចោះ ដើម្បីធ្វើឱ្យការស្នាក់នៅរបស់អ្នកក្លាយទៅជាបទពិសោធន៍ដ៏អស្ចារ្យ។</p>
+            </div>
+        </div>
+    </div>
+
+    <!---Rooms and Villas-->
+    <div id="room" class="container-lg text-start" data-aos="fade-up" data-aos-duration="2000">
+        <h2 class="text-start">បន្ទប់ និងវីឡា</h2>
+
+        <!-- Dropdown -->
+        <select class="select" id="filter" onchange="renderRooms()">
+            <option value="All">All</option>
+            <option value="Vip">VIP</option>
+            <option value="Standard">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Villa">Villa</option>
+        </select>
+
+        <div class="rooms" id="roomList">
+
+        </div>
+    </div>
+
+    <!---Popup Form Booking-->
+    <div class="popup" id="popup" data-aos="zoom-in" data-aos-duration="2000">
+        <div class="popup-content row">
+            <button class="btn-close" onclick="closeBooking()"></button>
+            <h3>Book Room</h3>
+            <div class="col-md-6">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Email" required>
+                <label>Phone Number</label>
+                <input type="text" id="phone" placeholder="Phone" required>
+                <label>Check-in Date</label>
+                <input type="date" id="checkin" placeholder="Check-in Date" required>
+                <label>Check-Out Date</label>
+                <input type="date" id="checkout" placeholder="Check-out Date" required>
+            </div>
+            <div class="col-md-6">
+                <label>Room Name</label>
+                <input type="text" id="roomname" readonly placeholder="Room Type" required>
+                <label>Room Type</label>
+                <input type="text" id="roomType" readonly placeholder="Room Type" required>
+                <label>Room Number</label>
+                <input type="text" id="roomNumber" placeholder="Room Number" required>
+                <label>Number of Guests</label>
+                <input type="number" id="guests" placeholder="Guests" required>
+                <label>Price</label>
+                <input type="text" id="price" readonly placeholder="Price" required>
+            </div>
+            <button class="btn" onclick="sendBooking()">Book Now</button>
+        </div>
+    </div>
+
+
+    <!--Facilities and services-->
+    <div class="facilities text-center" data-aos="fade-up" data-aos-duration="2000">
+        <h2>សេវាកម្ម និងសម្ភារៈ</h2>
+
+        <div class="facility-grid">
+
+            <div class="facility-card">
+                <div class="facility-icon"><i class="fas fa-swimming-pool"></i></div>
+                <h3>អាងហែលទឹក 🏊</h3>
+                <p>Enjoy our clean and relaxing outdoor swimming pool.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon"><i class="fas fa-spa"></i></div>
+                <h3>ម៉ាស្សា​និងទទួលសារ 💆</h3>
+                <p>Relax with professional spa and massage services.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon"><i class="fas fa-utensils"></i></div>
+                <h3>អាហារដ្ឋាន 🍽️</h3>
+                <p>Delicious local and international cuisine available.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon"><i class="fas fa-dumbbell"></i></div>
+                <h3>ក្លឹបហាត់ប្រាណ 🏋️</h3>
+                <p>Modern fitness center with full equipment.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon"><i class="fas fa-wifi"></i></div>
+                <h3>Wifi និងយានយន្ត 🚐</h3>
+                <p>Free high-speed WiFi and transport services.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!---Gallery-->
+    <h2 class="text-gallery" id="gallery" data-aos="fade-up" data-aos-duration="2000">រូបភាព</h2>
+    <!-- Grid -->
+    <div class="parent" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="div1">
+            <img src="https://th.bing.com/th/id/OIP.1voqWWJ3gEmq5JC0IE2t2AHaE8?w=279&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="div2">
+            <img src="https://th.bing.com/th/id/OIP.tyjyH3xb8lYrSVroz1lVhQHaDt?w=296&h=175&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="div3">
+            <img src="https://th.bing.com/th/id/OIP.DU8_IkMAVthoraPrGfDD6wHaE8?w=305&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="div4">
+            <img src="https://th.bing.com/th/id/OIP.wiRsA1RUHzDFk5oClNDcDwHaEK?w=271&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="div5">
+            <img src="https://th.bing.com/th/id/OIP.cUquyNGxZEXTRXl_Qlg7rgHaE8?w=245&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                onclick="openLightbox(this.src)">
+        </div>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()" data-aos="zoom-in" data-aos-duration="2000">
+        <img id="lightbox-img">
+    </div>
+
+    <!---Promotion section banner-->
+    <div id="promoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="2000">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators" id="indicators"></div>
+
+        <!-- Slides -->
+        <div class="carousel-inner" id="carouselContent"></div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!--Contact Section-->
+    <div class="container py-5" id="contact">
+        <h2 class="text-start mb-4 contact-us">ទំនាក់ទំនង</h2>
+
+        <div class="row g-3">
+
+            <!-- LEFT SIDE -->
+            <div class="col-md-7" data-aos="fade-right" data-aos-duration="2000">
+
+                <!-- Contact Info -->
+                <div class="contact-box contact-info mb-3">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fa-solid fa-phone"></i> +855 974 528 751</p>
+                    <p><i class="fa-solid fa-envelope"></i> bonaphal50@email.com</p>
+                    <p><i class="fa-solid fa-map-marker-alt"></i> Kampot, Cambodia</p>
+                </div>
+
+                <!-- Map -->
+                <div class="contact-box map">
+                    <iframe src="https://maps.google.com/maps?q=kampot&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+
+            </div>
+            <!-- RIGHT SIDE (FORM FULL HEIGHT) -->
+            <div class="col-md-5" data-aos="fade-left" data-aos-duration="2000">
+                <div class="contact-box h-100">
+                    <h4>ផ្ញើសារ</h4>
+                    <input id="contactname" type="text" class="form-control mb-3" placeholder="ឈ្មោះ">
+                    <textarea id="contactmessage" class="form-control mb-3" rows="6" placeholder="សារ​(Message)"></textarea>
+                    <button onclick="sendMessage()" class="btn btn-main w-100">ផ្ញើសារ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="py-4">
+        <div class="row">
+            <p class="text-center">&copy; 2026 Damnak Resort. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+<script src="js/Script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>
